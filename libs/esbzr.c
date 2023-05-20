@@ -4,7 +4,8 @@
 
 void k_disc(char c, uint8_t couleur)
 {
-    volatile char* curseur = (uintptr_t) (getCurPos() + VGA);
+    uintptr_t cp = (uintptr_t) getCurPos();
+    volatile char* curseur = (uintptr_t) (cp + cp + VGA);
     *curseur++ = c;
     *curseur = couleur;
     incCurPos();
